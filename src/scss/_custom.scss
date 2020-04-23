@@ -1,0 +1,551 @@
+/*************************************************
+**************************************************
+- General Classes
+- General Style
+- Menu
+- Header
+- AboutUs Section
+- Feature Section
+- Testimonial Section
+- Footer
+- Print Style
+**************************************************
+**************************************************/
+
+/*************** General Classes *****************/
+button {
+  &:focus,
+  &:active,
+  &:visited {
+    outline: none;
+    box-shadow: none;
+  }
+
+  &.btn-primary {
+    border-color: transparent;
+  }
+
+  &.read-btn {
+    padding: 12px 0;
+    color: $primary-color;
+    background-color: transparent;
+    border: transparent;
+    border-bottom: 1px solid $primary-color;
+    text-transform: capitalize;
+
+    i {
+      padding: 0 0 0 6px;
+      font-size: 14px;
+      font-weight: lighter;
+    }
+
+    &:hover {
+      padding-right: 10px;
+      i {
+        transform: translateX(10px);
+      }
+    }
+  }
+}
+
+.main-title {
+  margin-bottom: 80px;
+  font-size: $font-xlarge;
+  font-weight: 700;
+  color: $primary-color;
+  text-align: center;
+  text-transform: capitalize;
+  text-shadow: 0px 8px 8px rgba(97,97,97,0.25);
+}
+
+/****************** General Style ******************/
+.App {
+  padding: 30px;
+}
+
+* {
+  transition: all 1s;
+  scroll-behavior: smooth;
+}
+
+/*******************   Menu  *********************/
+.menu-btn {
+  z-index: 100;
+  position: fixed;
+  right: 30px;
+  top: 30px;
+  width: 60px;
+  height: 60px;
+  transform: translate(-30px,30px);
+  border-radius: 50px;
+  border: transparent;
+  background-color: $white-color;
+  box-shadow: 0 10px 25px 0 rgba(0,0,0,.3);
+
+  i {
+    vertical-align: middle;
+    font-size: $font-large;
+    color: $light-gray-color;
+  }
+}
+
+.menu-div {
+  position: fixed;
+  top: -50px;
+  bottom: 0;
+  right: -100px;
+  width: 0;
+  flex-direction: column;
+  z-index: 99;
+  padding: 150px 50px;
+  font-size: 20px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, .5);
+  background: linear-gradient(to right bottom, rgba(126, 213, 111, 0.9), rgba(40, 180, 133, 0.9));
+
+  &.menu-open {
+    opacity: 1;
+    right: 0;
+    width: 100%;
+  }
+
+  .navbar-brand {
+    margin: 35px auto;
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+
+    .nav-link {
+      font-size: $font-xlarge;
+      color: $white-color;
+      font-weight: 600;
+
+      &:hover {
+        color: $dark-gray-color;
+      }
+    }
+  }
+}
+
+/******************* Header **********************/
+header {
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  height: 95vh;
+
+  .cover {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: linear-gradient(to right bottom, rgba(126,213,111,0.8), rgba(40,180,133,0.8)),;
+  }
+
+  .logo-header {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+
+    img {
+      width: 60px;
+      height: auto;
+    }
+  }
+
+  .header-content {
+    color: $white-color;
+    text-align: center;
+    transform: translateY(100%);
+
+    h1 {
+      margin-bottom: 25px;
+      font-weight: bolder;
+      text-transform: uppercase;
+      letter-spacing: 22px;
+
+      @include media-breakpoint-down(xs) {
+        letter-spacing: 0;
+      }
+    }
+
+    h2 {
+      margin-bottom: 50px;
+      font-size: $font-large;
+      font-weight: 700;
+      text-transform: capitalize;
+      letter-spacing: 8px;
+
+      @include media-breakpoint-down(xs) {
+        letter-spacing: 2px;
+        line-height: 27px;
+      }
+    }
+
+    button {
+      color: $light-gray-color;
+      background-color: $white-color;
+      border: 1px solid $white-color;
+      box-shadow: 0 1rem 2rem rgba(0,0,0,0.2);
+      text-transform: uppercase;
+      padding: 12px 30px;
+      font-weight: lighter;
+      border-radius: 25px;
+
+      &:hover,
+      &:active {
+        box-shadow: 0px 2px 5px 10px rgba(0,0,0,0.1);
+        color: $white-color;
+        background-color: transparent;
+      }
+    }
+  }
+}
+
+/*************** AboutUs Section *****************/
+.about-section {
+  margin-top: -20vh;
+  padding: 200px 0 100px;
+  background-color: $alabaster-color;
+
+  @include media-breakpoint-up(sm) {
+    padding: 250px 0;
+  }
+
+  .about-content {
+    margin-bottom: 30px;
+    color: $light-gray-color;
+
+    .title {
+      margin-bottom: 15px;
+      font-size: $font-large;
+      font-weight: 700;
+      text-transform: capitalize;
+    }
+
+    .description {
+      font-size: $font-small;
+      line-height: 27px;
+    }
+  }
+
+  .image-container {
+    position: relative;
+    max-width: 500px;
+    margin: 50px auto 100px;
+
+    @include media-breakpoint-up(md) {
+      margin: 50px auto 350px;
+    }
+
+    @include media-breakpoint-only(sm) {
+      margin: 50px auto ;
+    }
+
+    img {
+      position: absolute;
+      box-shadow: 0 1.5rem 4rem rgba(0,0,0,0.4);
+
+      &:first-child {
+        top: 0;
+        left: 0;
+      }
+
+      &:nth-child(2) {
+        top: 0;
+        right: 0;
+        transform: translateY(20%);
+      }
+
+      &:last-child {
+        top: 0;
+        transform: translate(40%,60%);
+      }
+
+      &:hover {
+        z-index: 3;
+
+        @include media-breakpoint-down(sm) {
+          transform: scale(1.2,1.2) !important;
+        }
+      }
+
+      @include media-breakpoint-only(sm) {
+        max-width: 350px;
+      }
+
+      @include media-breakpoint-down(sm) {
+        display: block;
+        position: inherit;
+        transform: translate(0) !important;
+        margin: 35px auto;
+      }
+
+      @include media-breakpoint-down(xs) {
+        max-width: 220px;
+      }
+    }
+  }
+}
+
+/************** Feature Section ******************/
+.feature-section {
+  padding: 200px 0;
+  margin-top: -100px;
+  position: relative;
+  transform: skewY(-7deg);
+
+  .cover {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to right bottom, rgba(126,213,111,0.8), rgba(40,180,133,0.8));
+  }
+
+  .row {
+    transform: skewY(7deg);
+
+    .card {
+      min-height: 320px;
+      padding: 12px 6px;
+      border-radius: 3px;
+      background-color: rgba(255,255,255,0.8);
+      box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+      text-align: center;
+
+      &:hover {
+        transform: translateY(-1.5rem) scale(1.03);
+      }
+
+      @include media-breakpoint-down(lg) {
+        margin: 0 auto 35px;
+      }
+
+      @include media-breakpoint-down(sm) {
+        min-height: auto;
+        max-width: 320px;
+      }
+      
+      .card-header {
+        background-color: transparent;
+        border: none;
+
+        i {
+          margin-top: 15px;
+          font-size: 40px;
+          color: $primary-color;
+        }
+      }
+
+      .card-body {
+        text-transform: capitalize;
+        color: $light-gray-color;
+
+        .card-title {
+          font-size: $font-large;
+          line-height: 30px;
+        }
+
+        .card-test {
+          font-size: $font-small;
+          line-height: 26px;
+        }
+      }
+    }
+  }
+}
+
+/************* Testimonial Section ***************/
+.testimonial-section {
+  position: relative;
+  padding: 150px 0;
+
+  .cover,
+  .video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .cover {
+    background-color: rgba(255,255,255,0.8);
+  }
+
+  .video-container {
+    z-index: -1;
+    overflow: hidden;
+
+    .video {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .testimonial-card {
+    flex-direction: column;
+    width: 75%;
+    margin: 0 auto 80px;
+    padding: 25px 40px;
+    background-color: rgba(255,255,255,0.6);
+    border-radius: 3px;
+    transform: skewX(-12deg);
+
+    @include media-breakpoint-up(lg) {
+      flex-direction: row;
+      padding: 45px 80px;
+    }
+
+    @include media-breakpoint-down(sm) {
+      width: 90%;
+      transform: skewX(0);
+    }
+
+    .image-container,
+    .card-body {
+      transform: skewX(12deg);
+
+      @include media-breakpoint-down(sm) {
+        transform: skewX(0);
+      }
+    }
+
+    .image-container {
+      position: relative;
+
+      img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin-right: 15px;
+      }
+
+      .image-caption {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        bottom: 0;
+        opacity: 0;
+        font-size: $font-meduim;
+        color: $white-color;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-align: center;
+        letter-spacing: 2px;
+        opacity: 0;
+        transform: translate(-55%, 0);
+      }
+
+      @include media-breakpoint-down(lg) {
+        margin: 0 auto 15px;
+      }
+    }
+
+    .card-body {
+      color: $light-gray-color;
+
+      .card-title {
+        margin-bottom: 15px;
+        font-size: $font-large;
+        line-height: 30px;
+        text-transform: capitalize;
+      }
+
+      .card-text {
+        font-size: $font-small;
+        line-height: 27px;
+      }
+    }
+
+    &:hover {
+      img {
+        filter: blur(2px) brightness(80%);
+      }
+
+      .image-caption {
+        opacity: 1;
+        transform: translate(-55%,-50%);
+      }
+    }
+  }
+  
+  .carousel-control-prev,
+  .carousel-control-next {
+    display: none;
+  }
+}
+
+/******************* Footer **********************/
+footer {
+  padding: 100px 0;
+  background-color: $dark-gray-color;
+
+  .footer-logo {
+    margin-bottom: 80px;
+    text-align: center;
+
+    img {
+      max-width: 100%;
+    }
+  }
+
+  .footer-navigation,
+  .footer-copyright {
+    border-top: 1px solid $light-gray-color;
+    padding: 15px 0;
+    font-size: $font-small;
+    color: $white-color;
+
+    @include media-breakpoint-down(sm){
+      padding: 15px;
+    }
+  }
+
+  .footer-navigation {
+    .nav {
+      .nav-link {
+        padding: 0 15px 15px 0;
+        color: $white-color;
+        text-transform: uppercase;
+
+        &:hover {
+          color: $primary-color;
+        }
+      }
+    }
+
+    @include media-breakpoint-up(md) {
+      margin-left: 20px;
+    }
+  }
+
+  .footer-copyright {
+    line-height: 25px;
+
+    span{
+      line-height: 25px;
+      color: $primary-color;
+      text-transform: capitalize;
+      font-weight: 700;
+    }
+
+    @include media-breakpoint-up(md) {
+      margin-right: 20px;
+    }
+  }
+}
+
+/*************** Print Style ***********/
+@media print {
+  * {
+    visibility: visible;
+    display: block;
+  }
+}

@@ -1,25 +1,35 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
-  "icons": [
-    {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
-    },
-    {
-      "src": "logo192.png",
-      "type": "image/png",
-      "sizes": "192x192"
-    },
-    {
-      "src": "logo512.png",
-      "type": "image/png",
-      "sizes": "512x512"
-    }
-  ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+ "name": "NATOURS App",
+ "short_name": "NATOURS React App",
+ "icons": [
+  {
+    "src": "./assets/image/favicon-16x16.png",
+    "sizes": "16x16",
+    "type": "image/png"
+  },
+  {
+    "src": "./assets/image/favicon-32x32.png",
+    "sizes": "32x32",
+    "type": "image/png"
+  },
+  {
+    "src": "./assets/image/android-chrome-144x144.png",
+    "sizes": "144x144",
+    "type": "image/png"
+  },
+  {
+   "src": "./assets/image/apple-touch-icon.png",
+   "sizes": "144x144",
+   "type": "image/png"
+  },
+  {
+    "src": "./assets/image/mstile-150x150.png",
+    "sizes": "150x150",
+    "type": "image/png"
+  }
+ ],
+ "start_url": ".",
+ "display": "standalone",
+ "theme_color": "#000000",
+ "background_color": "#ffffff"
 }
