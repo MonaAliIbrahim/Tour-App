@@ -25,7 +25,7 @@ class Footer extends Component {
                 <Col xs={12} md={5} className="footer-copyright">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                   Aperiam, ipsum sapiente aspernatur libero repellat quis consequatur ducimus quam nisi exercitationem omnis earum qui.<br></br>
-                  Aperiam, ipsum sapiente aspernatur libero repellat quis consequatur ducimus quam nisi exercitationem omnis earum qui.<br></br>
+                  Source App is available on <a href="https://gitlab.com/monaali.5778/tour-app.git" target="_blank">GitLab</a><br></br>
                   Copyright &copy; by <span>mona ali</span>
                 </Col>
               </Row>

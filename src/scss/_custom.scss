@@ -529,11 +529,15 @@ footer {
   .footer-copyright {
     line-height: 25px;
 
+    span,
+    a {
+      color: $primary-color;
+      font-weight: 700;
+    }
+
     span{
       line-height: 25px;
-      color: $primary-color;
       text-transform: capitalize;
-      font-weight: 700;
     }
 
     @include media-breakpoint-up(md) {
